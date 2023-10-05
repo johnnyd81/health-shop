@@ -11,4 +11,4 @@ function checkCart() {
   }
 }
 
-checkCart();
+checkCart(); //updates the user interface to show the amount of items in the cart

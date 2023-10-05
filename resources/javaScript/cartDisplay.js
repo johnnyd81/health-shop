@@ -1,9 +1,11 @@
 const cartContainer = document.querySelector(".product-container");
 const grandTotal = document.querySelector(".grandTotal");
 
+//the displayCart function dynamically displays all the items in the cart to the user interface
 function displayCart() {
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
 
+  //by retrieving the cartItems and using Object.values(), the values can be looped over as an array
   if (cartContainer && cartItems) {
     cartContainer.innerHTML = "";
     Object.values(cartItems).map((item) => {
@@ -30,6 +32,7 @@ function displayCart() {
   }
 }
 
+//displays the final total of all the products in the cart
 function displayTotal() {
   let total = sessionStorage.getItem("cartCost");
   total = parseInt(total);
@@ -41,6 +44,9 @@ function displayTotal() {
   }
 }
 
+//a single click event listener is placed on the cartContainer
+//each click from a child element bubbles up and sets off the event handler in the parent
+//each event has a target that specifies the origin of the click event and which functions should be called i.e. delete, edit, reduce, increment
 cartContainer.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.parentElement.remove();
@@ -63,6 +69,7 @@ cartContainer.addEventListener("click", function (e) {
   }
 });
 
+//the adjutvalues function modifies values in the shopping cart according to the button that is being clicked
 function adjustValues(key, action) {
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
   let cartCost = sessionStorage.getItem("cartCost");
@@ -70,6 +77,7 @@ function adjustValues(key, action) {
   cartCost = parseInt(cartCost);
   cartCount = parseInt(cartCount);
 
+  //by looping an object by it's key, the specific cart item can be modified individually
   for (let item in cartItems) {
     if (key == item && action == "delete") {
       cartCost = cartCost - cartItems[item].price * cartItems[item].quantity;
@@ -89,6 +97,7 @@ function adjustValues(key, action) {
       cartItems[item].quantity += 1;
     }
   }
+  //the cartItems, cartCost and cartNumbers are updated in sessionStorage to keep the values up to date
   sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
   sessionStorage.setItem("cartCost", JSON.stringify(cartCost));
   sessionStorage.setItem("cartCount", JSON.stringify(cartCount));

@@ -101,8 +101,11 @@ products.forEach((product) => {
   productsCatalogue.innerHTML += html;
 });
 
+//a nodelist is created below by getting all the add to cart buttons from the catalogue page
 const items = document.querySelectorAll(".bxs-cart-add");
 
+//the nodelist is then looped over and an event handler is added to each button
+//when an item is clicked and added to the cart, details about each item can found by it's index i.e. products[i]
 for (let i = 0; i < items.length; i++) {
   items[i].addEventListener("click", function () {
     cartNumbers(products[i]);
@@ -110,41 +113,53 @@ for (let i = 0; i < items.length; i++) {
   });
 }
 
+//the cartNumbers function updates the amount of items in the cart that is held in sessionStorage
 function cartNumbers(item) {
   let cartCmount = sessionStorage.getItem("cartCount");
   cartCmount = parseInt(cartCmount);
 
   if (cartCmount) {
     sessionStorage.setItem("cartCount", cartCmount + 1);
+    //the number of items in the cart is reflected in the user interface dynamically
     document.querySelector(".count").textContent = cartCmount + 1;
   } else {
+    //if no items are in the cart, the initial values are created
     sessionStorage.setItem("cartCount", 1);
     document.querySelector(".count").textContent = 1;
   }
 
+  //the setItem function adds the correct product to be stored in the cartItems object 
   setItem(item);
 }
 
 function setItem(product) {
+  //cartItems are retrieved from sessionStorage
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
 
+  //a condition checks that a value is present in cartItems
+  //if so then a new product can be added to the existing cartItems
   if (cartItems !== null) {
     if (cartItems[product.tag] == undefined) {
       cartItems = {
         ...cartItems,
+        //product.tag is used as the key to access the relevant product value
         [product.tag]: product,
       };
     }
-    cartItems[product.tag].quantity += 1;
+    cartItems[product.tag].quantity += 1;//if the product was already present in the cartItems object then it's quantity is incremented by 1
   } else {
+    //if no cartItems are present then the initial values are created
     product.quantity = 1;
     cartItems = {
       [product.tag]: product,
     };
   }
+  //sessionStorage is updated to always have the most up to date values
   sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
+
+//when the page loads then the checkCart function updates the user interface to show the amount of items in the cart
 function checkCart() {
   let cartAmount = sessionStorage.getItem("cartCount");
   cartAmount = parseInt(cartAmount);
@@ -156,6 +171,7 @@ function checkCart() {
   }
 }
 
+//the correct cost of the cart is calculated using the totalCost function
 function totalCost(product) {
   let cartCost = sessionStorage.getItem("cartCost");
   cartCost = parseInt(cartCost);
@@ -170,45 +186,4 @@ function totalCost(product) {
 
 checkCart(); //displays the correct amount of items in the cart when the page loads
 
-/*when the confirm button is clicked the variable called digit generates a random number using a function utilising Math.floor and Math.random.
-The random number will go up to 10000*/
 
-// $(document).ready(function () {
-//   $(".sectionBody").hide(); //this line hides the body of the accordion
-//   $(".sectionTitle").hover(function () {
-//     $(".sectionBody").hide();
-//     $(this).next().show(); //the this refers to the title,the next refers to the body of the accordion
-//   }) //show () reveals the body of the accordion
-// });
-
-// $(document).ready(function () {
-//   $(".cover1,.cover2").hover(function () {
-//     $(this).fadeOut(5000);
-//   }) //fades the elements when the mouse cursor hovers over them
-//   $(".cover1,.cover2").hover(function () {
-//     $("img").fadeIn(5000);
-//   }) //fades the elements in when cursor hovers over them
-// });
-
-// $(document).ready(function () {
-//   $(".button1").click(function () {
-//     $(".pic1,.container1,.container2,.container3,h1").fadeOut(6000).fadeIn(6000);
-//     $(".container1,.container2,.container3").css("background-color", "lightblue");
-//     $(".container1,.container2,.container3").css("font-weight", "bolder"); //the font-weight is altered
-//   }) //when the button is clicked the elements in the selector fade out and then fade in again
-// }) //the background color of the elements also changes
-
-// $(document).ready(function () {
-//   function Bounce() {
-//     $("#confirm").animate({
-//       top: "100px", //the button is animated by altering it's width
-//       width: "200px"
-//     }, 1000, function () {
-//       $("#confirm").animate({
-//         top: "300px",
-//         width: "220px"
-//       }, 1000, Bounce)
-//     });
-//   } //the function is repeatedly called to create a pulsating effect
-//   Bounce();
-// })
