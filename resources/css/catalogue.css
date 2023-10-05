@@ -1,0 +1,113 @@
+body {
+  width: 95%;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: lightgray;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.navBar {
+  margin-bottom: 60px;
+  width: 90%;
+  background-color: goldenrod;
+  padding: 5px;
+  outline: 2px solid white;
+  position: fixed;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  margin: 0 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+a:hover {
+  color: lightgreen;
+  text-shadow: 1px 1px 2px black;
+}
+
+.bxs-shopping-bags {
+  font-size: 1.7rem;
+  color: white;
+  position: absolute;
+  left: 4%;
+}
+
+.cartCount {
+  position: relative;
+}
+
+.count {
+  position: absolute;
+  bottom: 20%;
+  right: -2%;
+  background-color: orangered;
+  color: white;
+  width: 34px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 6px 0;
+}
+
+.catalogueList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10%;
+  gap: 30px;
+}
+
+.catalogueItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  background-color: lightsteelblue;
+  border-radius: 10px;
+  padding: 7px;
+  box-shadow: 2px 2px 6px black;
+}
+
+.catalogueDetails {
+  height: 95px;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bxs-cart-add {
+  font-size: 2rem;
+  cursor: pointer;
+  color: green;
+}
+
+@media (max-width: 1000px) {
+  .catalogueList {
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 650px) {
+  .catalogueList {
+    margin-top: 20%;
+  }
+}

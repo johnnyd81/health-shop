@@ -1,0 +1,16 @@
+img {
+  /*makes the image a block element so I can center it using the margin: auto declaration */
+  display: block;
+  margin: auto;
+}
+
+p {
+  text-align: center;
+  color: maroon;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+button {
+  margin-left: 750px;
+}
