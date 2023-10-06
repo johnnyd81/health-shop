@@ -1,3 +1,4 @@
+//Dom variable to render cart item amount
 const cartNumber = document.querySelector(".count");
 
 function checkCart() {
