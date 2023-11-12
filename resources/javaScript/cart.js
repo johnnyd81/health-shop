@@ -84,7 +84,7 @@ let products = [
   },
 ];
 
-//add catalogue items dynamically
+//add catalogue items dynamically to the webpage
 products.forEach((product) => {
   let html = `
      <div class="catalogueItem" >
