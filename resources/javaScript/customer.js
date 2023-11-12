@@ -1,6 +1,8 @@
 //Dom variable to render cart item amount
 const cartNumber = document.querySelector(".count");
 
+//checks if cart items are present in the shopping cart
+//the number of items are then used to update the textContent on the webpage
 function checkCart() {
   let cartCount = sessionStorage.getItem("cartCount");
   cartCount = parseInt(cartCount);
