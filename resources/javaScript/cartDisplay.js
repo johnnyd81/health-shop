@@ -69,7 +69,7 @@ cartContainer.addEventListener("click", function (e) {
   }
 });
 
-//the adjutvalues function modifies values in the shopping cart according to the button that is being clicked
+//the adjustvalues function modifies values in the shopping cart according to the button that is being clicked
 function adjustValues(key, action) {
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
   let cartCost = sessionStorage.getItem("cartCost");
