@@ -7,7 +7,7 @@ This app enables a user to purchase exercise equipment and exercise health suppl
 
 ## Running the Code Locally
 
-Clone / Download the project to your computer.
+Clone / Download the project to your local computer.
 
 ### Start the code
 
