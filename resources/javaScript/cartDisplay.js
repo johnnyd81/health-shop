@@ -1,3 +1,4 @@
+//required DOM elements
 const cartContainer = document.querySelector(".product-container");
 const grandTotal = document.querySelector(".grandTotal");
 
