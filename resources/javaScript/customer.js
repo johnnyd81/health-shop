@@ -2,7 +2,7 @@
 const cartNumber = document.querySelector(".count");
 
 //checks if cart items are present in the shopping cart
-//the number of items are then used to update the textContent on the webpage
+//the number of items are then used to update the textContent in the user interface
 function checkCart() {
   let cartCount = sessionStorage.getItem("cartCount");
   cartCount = parseInt(cartCount);
