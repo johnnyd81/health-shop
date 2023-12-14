@@ -1,7 +1,7 @@
 //variables to dynamically alter the DOM
 const productsCatalogue = document.querySelector(".catalogueList");
 
-//the health products are stored in an array called products
+//the health products are stored as objects in an array called products
 let products = [
   {
     name: "Abdominal wheel",
