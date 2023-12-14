@@ -2,7 +2,7 @@
 const cartContainer = document.querySelector(".product-container");
 const grandTotal = document.querySelector(".grandTotal");
 
-//the displayCart function dynamically displays all the items in the cart to the user interface
+//the displayCart function dynamically displays all the items in the cart onscreen
 function displayCart() {
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
 
