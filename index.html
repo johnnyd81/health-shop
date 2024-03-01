@@ -1,67 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My company homepage</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- the link below allows me to import icons from boxicons -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./resources/css/index.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="resources/css/index.css" type="text/css" />
+    <title>Home page</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./resources/images/favicon (2).ico"
+    />
   </head>
-
   <body>
-    <nav class="mainNav">
-      <ul class="navLinks">
-        <i class="bx bx-home"></i>
-        <li><a href="aCatalogue.html">Catalogue</a></li>
-        <li><a href="customer.html">Customer care</a></li>
-      </ul>
-    </nav>
-    <div class="container1">
-      <img
-        class="cover cover1"
-        src="resources/images/train.jpeg"
-        alt="man training with dumbbells"
-      />
-      <img
-        class="cover cover2"
-        src="resources/images/tough.jpeg"
-        alt="athletic woman in gym"
-      />
-    </div>
-    <div class="container3">
-      <h1>The GOQ Studio</h1>
-      <span><i class="bx bx-dumbbell"></i></span>
-      <h2>
-        Reach your fitness goals with quality exercise and supplementation
-        products
-        <i class="bx bxs-wink-smile"></i>
-      </h2>
-    </div>
-    <!--the button below is a dropdown menu that reveals information when hovered-->
-    <div class="dropdown">
-      <button class="dropdownBtn">Hover or click for more information</button>
-      <div class="infoSection">
-        <div class="section">
-          <p class="sectionTitle">Contact us via these methods</p>
-          <p class="sectionTitle">
-            Telephone: <span class="tel">011 453 8745</span>
-          </p>
+    <header>
+      <nav class="navBar desktop">
+        <div class="logo-box">
+          <img
+            src="./resources/images/goq_logo.png"
+            class="logo-pic"
+            alt="logo-pic"
+          />
         </div>
-        <div class="section">
-          <span class="sectionTitle">Email:</span>
-          <span class="sectionBody">thegoqstudio89@gmail.com</span>
+        <ul class="navLinks desk-links">
+          <li><a href="aCatalogue.html">Catalogue</a></li>
+          <li>
+            <a href="customer.html">Customer Care</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="navBar mobile">
+        <div class="logo-box">
+          <img
+            src="./resources/images/goq_logo.png"
+            class="logo-pic"
+            alt="logo-pic"
+          />
         </div>
-        <div class="section">
-          <p class="sectionTitle">Download our app:</p>
-          <p class="sectionBody">
-            Go to the google play store and type in The GOQ Studio
-          </p>
+        <div class="hamburger-menu">
+          <i class="bx bx-menu"></i>
+        </div>
+        <ul class="navLinks ham-links">
+          <i class="bx bx-x"></i>
+          <li><a href="aCatalogue.html">Catalogue</a></li>
+          <li>
+            <a href="customer.html">Customer Care</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="slider-box">
+      <div class="slider">
+        <div class="img-box">
+          <img src="./resources/images/lady-train.jpeg" alt="gym-pic" />
+          <span class="caption 0">Stay balanced</span>
+        </div>
+        <div class="img-box">
+          <img src="./resources/images/gym-mix.jpg" alt="gym-pic" />
+          <span class="caption 1">Get professional nutritional advice</span>
+        </div>
+        <div class="img-box">
+          <img src="./resources/images/drawing.jpeg" alt="gym-pic" />
+          <span class="caption 2">Get motivated</span>
+        </div>
+        <div class="img-box">
+          <img src="./resources/images/spot-train.jpeg" alt="gym-pic" />
+          <span class="caption 3">Get a tailored training programme</span>
+        </div>
+        <div class="img-box">
+          <img src="./resources/images/gym-rope.jpg" alt="gym-pic" />
+          <span class="caption 4">Get fit</span>
+        </div>
+        <div class="img-box">
+          <img src="./resources/images/fit-healthy.jpeg" alt="gym-pic" />
+          <span class="caption 5">Stay healthy</span>
+        </div>
+      </div>
+      <div class="navBtn-box">
+        <span class="dot 0 activeBtn"></span>
+        <span class="dot 1"></span>
+        <span class="dot 2"></span>
+        <span class="dot 3"></span>
+        <span class="dot 4"></span>
+        <span class="dot 5"></span>
+      </div>
+    </div>
+    <div class="about-box">
+      <div class="about">
+        <div class="about-us">
+          <img src="./resources/images/curl.jpeg" alt="train" />
+          <div class="img-caption">
+            <h2 class="img-title">Great Deals</h2>
+            <p>
+              Take your fitness goals to new heights with our promotional
+              products. Check them out on the catalogue page.
+            </p>
+            <a href="aCatalogue.html" class="catalogue-link"
+              >Go to catalogue page <i class="bx bx-right-arrow-alt"></i
+            ></a>
+          </div>
+        </div>
+        <div class="promotion">
+          <img src="./resources/images/lean.jpeg" alt="train-gloves" />
+          <div class="img-caption">
+            <h2 class="img-title">Cool Events</h2>
+            <p>
+              Each month a special event is held for our members. Keep an eye on
+              our newsletter for dates and venues.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="img-detail-box">
+      <div class="img-detail">
+        <div class="img-detail-info">
+          <img
+            src="./resources/images/squat_barbell.jpeg"
+            class="detail-pic"
+            alt="gym-pic"
+          />
+          <div class="img-detail-caption">
+            <p class="img-detail-title">
+              Integrating cutting edge fitness technology
+            </p>
+            <p class="img-detail-description">
+              Shatter plateaus with our new AI powered fitness coach. Designed
+              to suit your training style
+            </p>
+            <button class="img-detail-btn">Learn more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-box">
+        <div class="footer-1">
+          <h3 class="footerSub-1">Legal</h3>
+          <p>Terms and conditions</p>
+          <p>Privacy policy</p>
+          <p>FAQ's</p>
+        </div>
+        <div class="footer-2">
+          <h3 class="footerSub-2">Contact</h3>
+          <p>Contact us</p>
+          <p>Careers</p>
+          <p>Become a personal trainer</p>
+        </div>
+      </div>
+    </footer>
+    <script src="./resources/javaScript/index.js"></script>
   </body>
 </html>

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Our Customer Care</title>
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="./resources/images/favicon (2).ico"
+  />
+    <title>Customer Care</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -10,22 +15,53 @@
     />
     <link rel="stylesheet" href="resources/css/customer.css" type="text/css" />
   </head>
-
   <body>
-    <nav class="mainNav">
-      <ul class="navLinks">
-        <i class="bx bx-male"></i>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aCatalogue.html">Catalogue</a></li>
-        <li class="cartLink"><a href="cart.html">Cart <span class="count">0</span></a></li>
-      </ul>
-    </nav>
-    <h1><u>Customer care</u></h1>
+    <header>
+      <nav class="navBar desktop">
+        <div class="logo-box">
+          <img
+            src="./resources/images/goq_logo.png"
+            class="logo-pic"
+            alt="logo-pic"
+          />
+        </div>
+        <ul class="navLinks desk-links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="aCatalogue.html">Catalogue</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="navBar mobile">
+        <div class="logo-box">
+          <img
+            src="./resources/images/goq_logo.png"
+            class="logo-pic"
+            alt="logo-pic"
+          />
+        </div>
+        <div class="hamburger-menu">
+          <i class="bx bx-menu"></i>
+        </div>
+        <ul class="navLinks ham-links">
+          <i class="bx bx-x"></i>
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="aCatalogue.html">Catalogue</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+   <div class="customer-header-img">
+    <h1 class="main-title">Customer care</h1>
     <img
-      src="resources/images/personal-trainer-1.jpeg"
+      src="resources/images/boxing-pic.jpeg"
       alt="personal-trainer"
       class="pic1"
     />
+   </div>
+
+   <div class="main-content">
     <div class="container1">
       <p>
         Providing a world class service to our customers has always been our
@@ -55,16 +91,18 @@
       <h4><u>Available branches</u></h4>
       <p>The GOQ Studio has branches in:</p>
       <ul id="branches">
-        <li>Johannesburg</li>
-        <li>Cape Town</li>
-        <li>Port Elizabeth</li>
-        <li>Bloemfontein</li>
+        <li class="city">Johannesburg -</li>
+        <li class="city">Cape Town -</li>
+        <li class="city">Port Elizabeth -</li>
+        <li class="city">Bloemfontein</li>
       </ul>
       <p>
         Our company ships all over the world so if you can't find a branch,
         ordering online is a suitable alternative.
       </p>
     </div>
+   </div>
+  
     <script src="./resources/javaScript/customer.js"></script>
   </body>
 </html>

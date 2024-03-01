@@ -1,33 +1,94 @@
 //required DOM elements
-const cartContainer = document.querySelector(".product-container");
-const grandTotal = document.querySelector(".grandTotal");
+const openCartBtns = document.querySelectorAll(".open-cart");
+const cartContainer = document.querySelector(".cart-container");
+const grandTotal = document.querySelector(".total-price");
+const hamlinks = document.querySelector(".ham-links");
+const productContainer = document.querySelector(".product-container");
+const cartContent = document.querySelector(".cart-content");
+const closeCartBtn = document.querySelector(".bx-x-circle");
+const cartCountUI = document.querySelectorAll(".count");
+const buyBtn = document.querySelector(".btn-buy");
+const orderContainer = document.querySelector(".order-container");
+const confirmTotal = document.querySelector(".confirm-total-amount");
+
+openCartBtns.forEach((openCartBtn) =>
+  openCartBtn.addEventListener("click", function () {
+    cartContainer.classList.toggle("show");
+    hamlinks.classList.remove("active");
+    displayCart();
+    displayTotal();
+  })
+);
+
+closeCartBtn.onclick = () => {
+  cartContainer.classList.remove("show");
+};
+
+productContainer.onclick = function () {
+  cartContainer.classList.contains("show") &&
+    cartContainer.classList.remove("show");
+};
+
+function adjustCartValues() {
+  let count = parseInt(sessionStorage.getItem("cartCount"));
+  if (!count) {
+    cartCountUI.forEach((cart) => (cart.textContent = 0));
+  } else {
+    cartCountUI.forEach((cart) => (cart.textContent = count));
+  }
+}
 
 //the displayCart function dynamically displays all the items in the cart onscreen
 function displayCart() {
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
 
   //by retrieving the cartItems and using Object.values(), the values can be looped over as an array
-  if (cartContainer && cartItems) {
-    cartContainer.innerHTML = "";
+  if (cartContent && cartItems) {
+    cartContent.innerHTML = "";
     Object.values(cartItems).map((item) => {
-      cartContainer.innerHTML += `
+      cartContent.innerHTML += `
         <div class="cart-item" id=${item.tag}>
-          <abbr title="Remove item from cart">
-            <i class='bx bxs-x-circle ${item.tag} delete'></i>
-          </abbr>
-          <div class="cart-image">
-            <img src=${item.image} alt="health item" />
-          </div>  
+            <i class='bx bxs-x-circle ${
+              item.tag
+            } delete' title="Remove item from cart"></i>
+            <div class="cart-image" >
+              <img src=${item.image} alt="item" height="90" width="90" />
+            </div>
           <div class="cart-details">
             <span class="item-name">${item.name}</span>
             <span class="item-price">R ${item.price * item.quantity},00</span>
             <div class="quantity-adjuster ${item.tag}">
-              <abbr title="Reduce quantity"><i class='bx bxs-minus-circle reduce'></i></abbr>
+              <i class='bx bxs-minus-circle reduce' title="Reduce quantity"></i>
               <span class="quantity-count">${item.quantity}</span>
-              <abbr title="Increase quantity"><i class='bx bxs-plus-circle increase'></i></abbr>
+              <i class='bx bxs-plus-circle increase' title="Increase quantity"></i>
             </div>
           </div>
         </div>
+      `;
+    });
+  }
+}
+
+function confirmItems() {
+  let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
+
+  //by retrieving the cartItems and using Object.values(), the values can be looped over as an array
+  if (orderContainer && cartItems) {
+    orderContainer.innerHTML = "";
+    Object.values(cartItems).map((item) => {
+      orderContainer.innerHTML += `
+        <div class="confirm-item" id=${item.tag}>
+       
+            <div class="confirm-image-name" >
+            <p class="item-name">${item.name}</p>
+              <img src=${item.image} alt="item" height="60" width="60" />
+             
+            </div>
+          <div class="confirm-cart-details">
+          X <span class="confirm-quantity">${item.quantity}</span>
+          </div>
+        </div>
+        <hr/>
       `;
     });
   }
@@ -40,9 +101,19 @@ function displayTotal() {
 
   if (total) {
     grandTotal.textContent = `R ${total}, 00`;
+    confirmTotal.textContent = `${total}`;
+    buyBtn.disabled = false;
+    buyBtn.style.cursor = "pointer";
   } else {
     grandTotal.textContent = `R 0, 00`;
+    buyBtn.disabled = true;
+    buyBtn.style.cursor = "not-allowed";
   }
+}
+
+function updateTotal() {
+  displayTotal();
+  adjustCartValues();
 }
 
 //a single click event listener is placed on the cartContainer
@@ -50,23 +121,17 @@ function displayTotal() {
 //each event has a target that specifies the origin of the click event and which functions should be called i.e. delete, edit, reduce, increment
 cartContainer.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete")) {
-    e.target.parentElement.parentElement.remove();
+    e.target.parentElement.remove();
     adjustValues(e.target.classList[2], e.target.classList[3]);
-    displayTotal();
+    updateTotal();
   } else if (e.target.classList.contains("reduce")) {
-    adjustValues(
-      e.target.parentElement.parentElement.classList[1],
-      e.target.classList[2]
-    );
+    adjustValues(e.target.parentElement.classList[1], e.target.classList[2]);
     displayCart();
-    displayTotal();
+    updateTotal();
   } else if (e.target.classList.contains("increase")) {
-    adjustValues(
-      e.target.parentElement.parentElement.classList[1],
-      e.target.classList[2]
-    );
+    adjustValues(e.target.parentElement.classList[1], e.target.classList[2]);
     displayCart();
-    displayTotal();
+    updateTotal();
   }
 });
 
@@ -106,3 +171,4 @@ function adjustValues(key, action) {
 
 displayCart();
 displayTotal();
+adjustCartValues();

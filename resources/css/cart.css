@@ -1,22 +1,42 @@
-body {
-  width: 95%;
-  margin: auto;
-  /*centers my webpage*/
-  box-sizing: border-box;
-  font-size: 1.1rem;
-  padding: 10px;
-  background-color: lightcyan;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-h1 {
-  color: rgb(5, 5, 43);
-}
-
 .totalContainer {
   display: flex;
   justify-content: center;
+}
+
+.total {
+  height: 40px;
+}
+
+.total-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-top: 1px solid lightslategrey;
+}
+
+.total-price {
+  color: darkblue;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.btn-buy {
+  margin-top: 14px;
+  background-color: darkgreen;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: white;
+  padding: 6px 0;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-buy:hover {
+  background-color: rgb(83, 233, 83);
+  color: black;
+  border: 1px solid black;
 }
 
 .finalTotal {
@@ -29,71 +49,6 @@ h1 {
   z-index: 1;
 }
 
-.bxs-cart-alt {
-  position: absolute;
-  font-size: 1.7rem;
-  left: 4%;
-  color: white;
-  text-shadow: 1px 1px 2px black;
-}
-
-.bxs-x-circle {
-  position: absolute;
-  font-size: 1.8rem;
-  color: maroon;
-  right: 1%;
-  top: 3%;
-  cursor: pointer;
-}
-
-.bxs-minus-circle,
-.bxs-plus-circle {
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-
-.quantity-count {
-  font-size: 1.3rem;
-  padding: 0 10px;
-}
-
-ul li {
-  list-style-type: none;
-  /* removes default list-style-type*/
-  display: inline;
-  /* turns a block element into an inline element*/
-  font-weight: bolder;
-  padding-right: 12px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  text-shadow: 2px 2px 3px black;
-}
-
-.navLinks {
-  text-align: center;
-}
-
-.mainNav {
-  /*adds styles to my main navigation bar*/
-  background-color: goldenrod;
-  padding: 3px;
-  outline: 2px solid white;
-  margin-top: 3px;
-  position: relative;
-}
-
-a:hover {
-  /*changes the color of the links on the navigation bar when the cursor hovers over them*/
-  color: lightgreen;
-  text-shadow: 1px 1px 2px black;
-}
-
 .product-container {
   display: flex;
   flex-wrap: wrap;
@@ -103,14 +58,33 @@ a:hover {
   z-index: -1;
 }
 
+.cart-title {
+  color: darkblue;
+  padding-bottom: 4px;
+  border-bottom: 1px solid darkgray;
+}
+
 .cart-item {
   display: flex;
+  flex-direction: column;
   background-color: white;
-  width: 450px;
+  width: 90%;
+  height: 170px;
   border: 2px solid darkgray;
   padding: 10px;
   border-radius: 5px;
+  margin: 5px auto;
   position: relative;
+}
+
+.cart-content {
+  height: 470px;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.cart-content::-webkit-scrollbar {
+  display: none;
 }
 
 .cart-details {
@@ -120,15 +94,39 @@ a:hover {
   margin-left: 3%;
 }
 
+.item-name {
+  font-weight: 700;
+}
+
 .quantity-adjuster {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16%;
-  margin-left: 35%;
+  margin-top: 10px;
 }
 
-img {
-  height: 130px;
-  width: 130px;
+.delete {
+  position: absolute;
+  font-size: 1.8rem;
+  top: 5px;
+  right: 5px;
+  color: crimson;
+  cursor: pointer;
+}
+
+.reduce,
+.increase {
+  font-size: 1.5rem;
+  color: blue;
+  cursor: pointer;
+}
+
+.quantity-count {
+  margin: 0 7px;
+}
+
+@media (min-height: 1000px) {
+  .cart-content {
+    height: 840px;
+  }
 }

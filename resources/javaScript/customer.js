@@ -1,17 +1,11 @@
-//Dom variable to render cart item amount
-const cartNumber = document.querySelector(".count");
+const burgerMenu = document.querySelector(".hamburger-menu");
+const hamLinks = document.querySelector(".ham-links");
+const closeLinks = document.querySelector(".bx-x");
 
-//checks if cart items are present in the shopping cart
-//the number of items are then used to update the textContent in the user interface
-function checkCart() {
-  let cartCount = sessionStorage.getItem("cartCount");
-  cartCount = parseInt(cartCount);
+burgerMenu.onclick = () => {
+  hamLinks.classList.add("active");
+};
 
-  if (cartCount) {
-    cartNumber.textContent = cartCount;
-  } else {
-    cartNumber.textContent = 0;
-  }
-}
-
-checkCart(); //updates the user interface to show the amount of items in the cart
+closeLinks.onclick = () => {
+  hamLinks.classList.remove("active");
+};

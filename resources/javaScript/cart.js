@@ -1,5 +1,68 @@
 //variables to dynamically alter the DOM
 const productsCatalogue = document.querySelector(".catalogueList");
+const burgerMenu = document.querySelector(".hamburger-menu");
+const hamLinks = document.querySelector(".ham-links");
+const closeLinks = document.querySelector(".bx-x");
+const confirmMsgBox = document.querySelector(".confirmation-wrapper");
+const confirmMsgModal = document.querySelector(".confirmation-msg");
+const thankMsg = document.querySelector(".thank-box");
+const cancelMsg = document.querySelector(".cancel-box");
+const payBtn = document.querySelector(".btn-buy");
+const proceedBtn = document.querySelector(".ok-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
+
+function closeCart() {
+  hamLinks.classList.remove("active");
+}
+
+burgerMenu.onclick = () => {
+  hamLinks.classList.add("active");
+};
+
+closeLinks.onclick = () => {
+  closeCart();
+};
+
+payBtn.onclick = () => {
+  confirmMsgBox.classList.remove("hide");
+  cartContainer.classList.remove("show");
+  addClass(confirmMsgModal, "showModal", 1500);
+  confirmItems();
+};
+
+function clearCartCloseModal() {
+  confirmMsgBox.classList.add("hide");
+  confirmMsgModal.classList.remove("showModal");
+  sessionStorage.clear();
+  cartContent.innerHTML = "";
+  checkCart();
+}
+
+function addClass(element, className, delay) {
+  setTimeout(() => {
+    element.classList.add(className);
+  }, delay);
+}
+
+function removeClass(element, className, delay) {
+  setTimeout(() => {
+    element.classList.remove(className);
+  }, delay);
+}
+
+cancelBtn.onclick = () => {
+  clearCartCloseModal();
+  addClass(cancelMsg, "confirmShow", 2000);
+  removeClass(cancelMsg, "confirmShow", 5500);
+  document.querySelectorAll(".count")[1].textContent = 0;
+};
+
+proceedBtn.onclick = () => {
+  clearCartCloseModal();
+  addClass(thankMsg, "confirmShow", 2000);
+  removeClass(thankMsg, "confirmShow", 5500);
+  document.querySelectorAll(".count")[1].textContent = 0;
+};
 
 //the health products are stored as objects in an array called products
 let products = [
@@ -88,10 +151,10 @@ let products = [
 products.forEach((product) => {
   let html = `
      <div class="catalogueItem" >
-       <img src=${product.image} alt="exercise-item" />
+       <img src=${product.image} class="gym-img" alt="exercise-item" />
        <div class="catalogueDetails">
-        <p>${product.name}</p>
-        <p>R ${product.price},00</>
+        <p class="p-name">${product.name}</p>
+        <p class="p-price">R ${product.price},00</>
        </div>
        <div class="action">
          <abbr title="Adds the product to the cart"><i class='bx bxs-cart-add'></i></abbr>
@@ -103,6 +166,7 @@ products.forEach((product) => {
 
 //a nodelist is created below by getting all the add to cart buttons from the catalogue page
 const items = document.querySelectorAll(".bxs-cart-add");
+const confirmMessage = document.querySelector(".add-msg");
 
 //the nodelist is then looped over and an event handler is added to each button
 //when an item is clicked and added to the cart, details about each item can found by it's index i.e. products[i]
@@ -110,7 +174,13 @@ for (let i = 0; i < items.length; i++) {
   items[i].addEventListener("click", function () {
     cartNumbers(products[i]);
     totalCost(products[i]);
+    addMsg();
   });
+}
+
+function addMsg() {
+  addClass(confirmMessage, "reveal", 0);
+  removeClass(confirmMessage, "reveal", 3000);
 }
 
 //the cartNumbers function updates the amount of items in the cart that is held in sessionStorage
@@ -121,14 +191,20 @@ function cartNumbers(item) {
   if (cartCmount) {
     sessionStorage.setItem("cartCount", cartCmount + 1);
     //the number of items in the cart is reflected in the user interface dynamically
-    document.querySelector(".count").textContent = cartCmount + 1;
+    let displayCarts = document.querySelectorAll(".count");
+    for (let cart of displayCarts) {
+      cart.textContent = cartCmount + 1;
+    }
   } else {
     //if no items are in the cart, the initial values are created
     sessionStorage.setItem("cartCount", 1);
-    document.querySelector(".count").textContent = 1;
+    let displayCarts = document.querySelectorAll(".count");
+    for (let cart of displayCarts) {
+      cart.textContent = 1;
+    }
   }
 
-  //the setItem function adds the correct product to be stored in the cartItems object 
+  //the setItem function adds the correct product to be stored in the cartItems object
   setItem(item);
 }
 
@@ -145,8 +221,10 @@ function setItem(product) {
         //product.tag is used as the key to access the relevant product value
         [product.tag]: product,
       };
+      //the line below makes sure that the initial in-cart quantity amount for the product is 0
+      cartItems[product.tag].quantity = 0;
     }
-    cartItems[product.tag].quantity += 1;//if the product was already present in the cartItems object then it's quantity is incremented by 1
+    cartItems[product.tag].quantity += 1; //if the product was already present in the cartItems object then it's quantity is incremented by 1
   } else {
     //if no cartItems are present then the initial values are created
     product.quantity = 1;
@@ -158,14 +236,16 @@ function setItem(product) {
   sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
-
 //when the page loads then the checkCart function updates the user interface to show the amount of items in the cart
 function checkCart() {
   let cartAmount = sessionStorage.getItem("cartCount");
   cartAmount = parseInt(cartAmount);
 
   if (cartAmount) {
-    document.querySelector(".count").textContent = cartAmount;
+    let displayCarts = document.querySelectorAll(".count");
+    for (let cart of displayCarts) {
+      cart.textContent = cartAmount;
+    }
   } else {
     document.querySelector(".count").textContent = 0;
   }
@@ -185,5 +265,3 @@ function totalCost(product) {
 }
 
 checkCart(); //displays the correct amount of items in the cart when the page loads
-
-

@@ -1,24 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>The GOQ Studio catalogue page</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="resources/css/cart.css" type="text/css" />
     <link rel="stylesheet" href="resources/css/catalogue.css" type="text/css" />
+    <title>Catalogue page</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./resources/images/favicon (2).ico"
+    />
   </head>
 
   <body>
+    <div class="confirmation-wrapper hide"></div>
+    <div class="confirmation-msg">
+      <h2 class="c-title">Thank you for your purchase</h2>
+      <p class="c-msg">
+        The contents of your shopping cart are displayed below. Our sales team
+        will contact you shortly to process your order. If for any reason you
+        would like to cancel your order then the cancel button can be clicked.
+        If not click the proceed button.
+      </p>
+      <div class="confirm-total-container">
+        <p class="confirm-total-title">Total:</p>
+        <p class="confirm-total-box">
+          R <span class="confirm-total-amount"></span>,00
+        </p>
+      </div>
+      <div class="order-container"></div>
+      <div class="order-btn-container">
+        <button class="cancel-btn">Cancel</button>
+        <button class="ok-btn">Proceed</button>
+      </div>
+    </div>
     <header>
-      <nav class="navBar">
-        <ul class="navLinks">
-          <i class="bx bxs-shopping-bags"></i>
+      <nav class="navBar desktop">
+        <div class="logo-box">
+          <img
+            src="./resources/images/goq_logo.png"
+            class="logo-pic"
+            alt="logo-pic"
+          />
+        </div>
+        <ul class="navLinks desk-links">
           <li><a href="index.html">Home</a></li>
           <li class="cartCount">
-            <a href="cart.html">Cart</a> <span class="count">0</span>
+            <a class="open-cart">Cart</a> <span class="count">0</span>
+          </li>
+          <li>
+            <a href="customer.html">Customer Care</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="navBar mobile">
+        <div class="logo-box">
+          <img
+            src="./resources/images/goq_logo.png"
+            class="logo-pic"
+            alt="logo-pic"
+          />
+        </div>
+        <div class="hamburger-menu">
+          <i class="bx bx-menu"></i>
+        </div>
+        <ul class="navLinks ham-links">
+          <i class="bx bx-x"></i>
+          <li><a href="index.html">Home</a></li>
+          <li class="cartCount">
+            <a class="open-cart">Cart</a> <span class="count">0</span>
           </li>
           <li>
             <a href="customer.html">Customer Care</a>
@@ -26,10 +81,53 @@
         </ul>
       </nav>
     </header>
-    <!-- the products are addedd dynamically after being retrieved from sessionStorage -->
-    <div class="catalogueList"></div>
+    <div class="product-container">
+      <!-- the products are added dynamically after being retrieved from sessionStorage -->
+      <div class="catalogueList"></div>
+    </div>
 
+    <!-- cart-display that appears when the cart button is clicked -->
+    <div class="cart-container">
+      <h2 class="cart-title">Items in cart</h2>
+      <!-- cart content that the user has chosen will appear here -->
+      <div class="cart-content">
+        <!-- <div class="cart-box"></div> -->
+      </div>
+      <!-- Total -->
+      <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">R 0,00</div>
+      </div>
+      <!--Buy button-->
+      <button type="button" class="btn-buy">Pay now</button>
+      <!--Cart close-->
+      <i class="bx bx-x-circle" id="close-cart"></i>
+    </div>
+
+    <!--added to cart alert message-->
+    <div class="add-box">
+      <div class="add-msg">Added to cart 👍</div>
+    </div>
+
+    <!-- cancel order message -->
+    <div class="cancel-box">
+      <div class="cancel-msg confirm-modal">
+        Your order has been cancelled 😥
+      </div>
+    </div>
+
+    <!-- thank you order message -->
+    <div class="thank-box">
+      <div class="thank-msg confirm-modal">
+        Your order has been captured successfully 😀
+      </div>
+    </div>
     <footer></footer>
+
+    <script
+      type="text/javascript"
+      src="resources/javaScript/cartDisplay.js"
+    ></script>
     <script type="text/javascript" src="resources/javaScript/cart.js"></script>
   </body>
 </html>
