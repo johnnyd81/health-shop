@@ -1,4 +1,4 @@
-//variables to dynamically alter the DOM
+//required variables to dynamically alter the DOM
 const productsCatalogue = document.querySelector(".catalogueList");
 const burgerMenu = document.querySelector(".hamburger-menu");
 const hamLinks = document.querySelector(".ham-links");
