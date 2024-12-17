@@ -11,6 +11,7 @@ const payBtn = document.querySelector(".btn-buy");
 const proceedBtn = document.querySelector(".ok-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 
+//closes the cart by removing the active class from the element
 function closeCart() {
   hamLinks.classList.remove("active");
 }
