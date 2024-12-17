@@ -21,6 +21,7 @@ openCartBtns.forEach((openCartBtn) =>
   })
 );
 
+//adds an onclick event handler to the closeCartBtn to remove the show class thereby closing the cart
 closeCartBtn.onclick = () => {
   cartContainer.classList.remove("show");
 };
