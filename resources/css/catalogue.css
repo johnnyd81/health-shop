@@ -61,6 +61,7 @@ a:hover {
 }
 
 .confirmation-msg {
+  /* Hide the confirmation message offscreen by positioning it above the viewport */
   position: fixed;
   top: -120%;
   max-width: 100%;
