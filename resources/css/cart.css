@@ -34,6 +34,7 @@
   transition: 0.5s;
 }
 
+/* when the btn-buy is hovered over by the user's mouse then the style declaration below will be applied */
 .btn-buy:hover {
   background-color: rgb(83, 233, 83);
   color: black;
