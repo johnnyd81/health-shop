@@ -66,6 +66,7 @@ li a:hover {
   text-shadow: 1px 1px 2px black;
 }
 
+/* the mobile menu is invisible until the screen width gets to a certain width */
 .mobile {
   display: none;
 }
