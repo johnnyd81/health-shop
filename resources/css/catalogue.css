@@ -128,6 +128,7 @@ hr {
   justify-content: space-between;
 }
 
+/* declare one styling declaration for both the ok-btn and the cancel-btn and just change the background-colors */
 .ok-btn,
 .cancel-btn {
   color: white;
