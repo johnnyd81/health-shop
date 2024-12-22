@@ -60,6 +60,7 @@ li a:hover {
   text-shadow: 1px 1px 2px black;
 }
 
+/* keep mobile menu hidden on normal screen widths greater than 450px*/
 .mobile {
   display: none;
 }
