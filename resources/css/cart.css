@@ -127,6 +127,7 @@
   margin: 0 7px;
 }
 
+/* the media query adjusts the height of the cart content element to 840px when the height of the screen is 1000px or greater */
 @media (min-height: 1000px) {
   .cart-content {
     height: 840px;
