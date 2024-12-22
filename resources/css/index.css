@@ -356,6 +356,7 @@ li a:hover {
   margin: 3px 0;
 }
 
+/* media queries helps me to adjust certain ui elements to accomodate a particular screen width */
 @media (max-width: 936px) {
   .footerSub-1,
   .footerSub-2 {
