@@ -16,6 +16,7 @@ function closeCart() {
   hamLinks.classList.remove("active");
 }
 
+// when the burger menu is clicked then the active class is added to it's classList which opens the hamlinks element
 burgerMenu.onclick = () => {
   hamLinks.classList.add("active");
 };
