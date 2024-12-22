@@ -115,6 +115,7 @@ function displayTotal() {
   }
 }
 
+// update the total in the user interface and adjust the cart values onscreen
 function updateTotal() {
   displayTotal();
   adjustCartValues();
