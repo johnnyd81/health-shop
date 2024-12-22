@@ -201,6 +201,7 @@ hr {
   right: 0;
 }
 
+/* set mobile menu to not display when the screen is greater than a mobile screen width */
 .mobile {
   display: none;
 }
