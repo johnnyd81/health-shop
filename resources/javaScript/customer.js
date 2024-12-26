@@ -8,6 +8,7 @@ burgerMenu.onclick = () => {
   hamLinks.classList.add("active");
 };
 
+//close the links by removing the active class from the hamLinks element
 closeLinks.onclick = () => {
   hamLinks.classList.remove("active");
 };
