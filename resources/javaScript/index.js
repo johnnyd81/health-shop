@@ -8,7 +8,7 @@ const dots = document.querySelectorAll(".dot");
 const boxContainer = document.querySelector(".navBtn-box");
 let currImg = 0;
 const interval = 7000;
-//the timer uses the changeSlide function to change a slide every 7 seconds
+//the timer uses the changeSlide function to change a slide every 7 seconds or 7000 milliseconds
 let timer = setInterval(changeSlide, interval);
 
 function changeSlide(n) {
