@@ -115,7 +115,7 @@ function displayTotal() {
   }
 }
 
-// update the total in the user interface and adjust the cart values onscreen
+// update the total in the user interface and adjust the cart values onscreen in real time
 function updateTotal() {
   displayTotal();
   adjustCartValues();
