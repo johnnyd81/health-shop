@@ -21,6 +21,7 @@ burgerMenu.onclick = () => {
   hamLinks.classList.add("active");
 };
 
+//adds an eventListener to close the cart
 closeLinks.onclick = () => {
   closeCart();
 };
