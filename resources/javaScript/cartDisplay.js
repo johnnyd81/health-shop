@@ -32,7 +32,7 @@ productContainer.onclick = function () {
     cartContainer.classList.remove("show");
 };
 
-//keep track of amount of items in the cart and update the UI accordingly
+//keep track of amount of items in the cart and update the UI when the items change
 function adjustCartValues() {
   let count = parseInt(sessionStorage.getItem("cartCount"));
   if (!count) {
