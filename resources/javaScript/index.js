@@ -38,6 +38,7 @@ boxContainer.addEventListener("click", function (e) {
   changeSlide(e.target.classList[1]);
 });
 
+//adds an eventListener to the burgerMenu element to open when it is clicked
 burgerMenu.onclick = () => {
   hamLinks.classList.add("active");
 };
