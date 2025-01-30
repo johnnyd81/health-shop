@@ -1,4 +1,4 @@
-//required elements to access the DOM
+//required variables to access the DOM elements
 const openCartBtns = document.querySelectorAll(".open-cart");
 const cartContainer = document.querySelector(".cart-container");
 const grandTotal = document.querySelector(".total-price");
