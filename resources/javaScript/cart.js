@@ -35,6 +35,7 @@ payBtn.onclick = () => {
   confirmItems();
 };
 
+// clears the cart data i.e. removes all the products from the cart
 function clearCartCloseModal() {
   confirmMsgBox.classList.add("hide");
   confirmMsgModal.classList.remove("showModal");
