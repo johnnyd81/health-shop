@@ -260,7 +260,7 @@ function checkCart() {
 
 //the correct cost of the cart is calculated using the totalCost function
 function totalCost(product) {
-  let cartCost = sessionStorage.getItem("cartCost");
+  let cartCost = sessionStorage.getItem("cartCost");//get the cartCost from sessionStorage
   cartCost = parseInt(cartCost);
 
   if (cartCost) {
