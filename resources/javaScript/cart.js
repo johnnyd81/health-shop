@@ -27,7 +27,7 @@ closeLinks.onclick = () => {
 };
 
 //by clicking the pay button the cart container closes and a confirmation message box descends from the top of the viewport
-//the addClass function adds a showModal class but only does so after a delay of 1500 milliseconds or 1 and a half seconds
+//the addClass function adds the showModal class but only does so after a delay of 1500 milliseconds or 1 and a half seconds
 payBtn.onclick = () => {
   confirmMsgBox.classList.remove("hide");
   cartContainer.classList.remove("show");
