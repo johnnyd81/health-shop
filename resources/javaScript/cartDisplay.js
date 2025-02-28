@@ -42,7 +42,7 @@ function adjustCartValues() {
   }
 }
 
-//the displayCart function dynamically displays all the items in the cart onscreen
+//the displayCart function dynamically displays all the items in the cart
 function displayCart() {
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
 
