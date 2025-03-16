@@ -62,6 +62,7 @@ li a {
 }
 
 li a:hover {
+  /*use the hover pseudoclass to apply styles when the element is hovered*/
   color: gold;
   text-shadow: 1px 1px 2px black;
 }
