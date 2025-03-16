@@ -10,6 +10,7 @@ body {
 }
 
 .navBar {
+  /*Use flexbox to position elements in the navBar*/
   display: flex;
   justify-content: space-between;
   align-items: center;
