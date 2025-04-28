@@ -1,4 +1,4 @@
-//required variables to access the DOM
+//required variables to access the DOM using javaScript
 const burgerMenu = document.querySelector(".hamburger-menu");
 const hamLinks = document.querySelector(".ham-links");
 const closeLinks = document.querySelector(".bx-x");
