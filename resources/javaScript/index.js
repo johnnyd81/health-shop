@@ -6,8 +6,8 @@ const imgs = document.querySelectorAll(".slider img");
 const captions = document.querySelectorAll(".caption");
 const dots = document.querySelectorAll(".dot");
 const boxContainer = document.querySelector(".navBtn-box");
-let currImg = 0; // currImg starts from 0
-const interval = 7000;// variable that keeps the time in milliseconds i.e. 7 seconds
+let currImg = 0; // currImg starts from 0 
+const interval = 7000;// variable that keeps the time in milliseconds i.e. 7000 == 7 seconds
 //the timer uses the changeSlide function to change a slide every 7 seconds or 7000 milliseconds
 let timer = setInterval(changeSlide, interval);
 
