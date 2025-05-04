@@ -44,6 +44,7 @@ function adjustCartValues() {
 
 //the displayCart function dynamically displays all the items in the cart
 function displayCart() {
+  //fetch all the cartitems in sessionstorage
   let cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
 
   //by retrieving the cartItems and using Object.values(), the values can be looped over as an array
