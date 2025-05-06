@@ -20,6 +20,7 @@ body {
 }
 
 .navLinks {
+  /*Use flexbox to arrange the navLinks*/
   display: flex;
   justify-content: center;
   list-style-type: none;
