@@ -17,6 +17,7 @@
 }
 
 .total-price {
+  /*style the total price*/
   color: darkblue;
   font-weight: 700;
   font-size: 1.2rem;
