@@ -51,6 +51,7 @@ ul li {
 }
 
 li a {
+  /*style the links*/
   color: darkslategrey;
   text-decoration: none;
   margin: 0 12px 0 12px;
