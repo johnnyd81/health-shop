@@ -1,4 +1,5 @@
 body {
+  /*remove all the default browser styling settings i.e. margin, padding etc.*/
   margin: 0;
   padding: 0;
   box-sizing: border-box;
