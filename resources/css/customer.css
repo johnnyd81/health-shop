@@ -47,6 +47,7 @@ ul li {
 }
 
 .logo-pic {
+  /*alter the size of the logo picture*/
   transform: scale(0.35);
 }
 
