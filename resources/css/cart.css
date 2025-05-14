@@ -24,6 +24,7 @@
 }
 
 .btn-buy {
+  /*style the buy button*/
   margin-top: 14px;
   background-color: darkgreen;
   font-weight: 700;
