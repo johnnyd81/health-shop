@@ -1,5 +1,5 @@
 .totalContainer {
-  /* Center all the contents of the totalContainer by making it a flex container and using justify-content */
+  /* Center all the child elements of the totalContainer by making it a flex container and using justify-content */
   display: flex;
   justify-content: center;
 }
