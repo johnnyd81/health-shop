@@ -10,7 +10,7 @@
 }
 
 .total-title {
-  /*Style the title for the total*/
+  /*Style the title for the total cost of the cart*/
   font-weight: 700;
   font-size: 1.3rem;
   border-top: 1px solid lightslategrey;
