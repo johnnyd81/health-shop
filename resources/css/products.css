@@ -1,6 +1,6 @@
 img {
   /* img elements are inline elements by default */
-  /* by using the declaration display: block it makes the image a block element so I can center it using the margin: auto style declaration */
+  /* by using the declaration display: block it makes the image a block element so it can be centered using the margin: auto style declaration */
   display: block;
   margin: auto;
 }
