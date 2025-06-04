@@ -24,8 +24,8 @@ body {
 }
 
 ul li {
+   /* removes the default list-style-type setting*/
   list-style-type: none;
-  /* removes the default list-style-type setting*/
   display: inline;
   /* turns a block element into an inline element*/
   font-weight: bolder;
