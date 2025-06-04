@@ -16,7 +16,7 @@ body {
 }
 
 .navBar {
-  /*style the navbar element*/
+  /*style the navbar element using flexbox*/
   display: flex;
   justify-content: space-between;
   align-items: center;
