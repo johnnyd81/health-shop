@@ -6,6 +6,7 @@ img {
 }
 
 p {
+  /*align the paragraph element*/
   text-align: center;
   color: maroon;
   font-weight: bold;
