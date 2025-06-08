@@ -112,6 +112,7 @@
 }
 
 .delete {
+  /*style the delete button*/
   position: absolute;
   font-size: 1.8rem;
   top: 5px;
