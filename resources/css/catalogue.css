@@ -21,7 +21,7 @@ body {
 }
 
 .navLinks {
-  /*Use flexbox to align the navLinks*/
+  /*Use flexbox to align the navLinks correctly*/
   display: flex;
   justify-content: center;
   list-style-type: none;
