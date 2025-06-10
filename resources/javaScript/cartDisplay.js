@@ -11,7 +11,7 @@ const buyBtn = document.querySelector(".btn-buy");
 const orderContainer = document.querySelector(".order-container");
 const confirmTotal = document.querySelector(".confirm-total-amount");
 
-//an event handler is placed on the cart buttons that allows them to open the cart component
+//an event handler is added on the cart buttons that allows them to open the cart component
 openCartBtns.forEach((openCartBtn) =>
   openCartBtn.addEventListener("click", function () {
     cartContainer.classList.toggle("show");
