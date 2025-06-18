@@ -3,7 +3,7 @@ const burgerMenu = document.querySelector(".hamburger-menu");
 const hamLinks = document.querySelector(".ham-links");
 const closeLinks = document.querySelector(".bx-x");
 
-//open the links by adding the active class to the element's classList
+//open the links by adding the active class to the element's css classList
 burgerMenu.onclick = () => {
   hamLinks.classList.add("active"); //the add method is available on the classList object
 };
