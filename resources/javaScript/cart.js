@@ -50,7 +50,7 @@ function addClass(element, className, delay) {
   }, delay);
 }
 
-//the function below removes a class from an element with a certain delay
+//the function below removes a class from an element after a certain delay
 function removeClass(element, className, delay) {
   setTimeout(() => {
     element.classList.remove(className);
