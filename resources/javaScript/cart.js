@@ -21,7 +21,7 @@ burgerMenu.onclick = () => {
   hamLinks.classList.add("active");
 };
 
-//adds a click eventListener to close the cart element
+//adds a click eventListener to close the shopping cart element
 closeLinks.onclick = () => {
   closeCart(); // closeCart function is invoked when the closeLinks element is clicked
 };
