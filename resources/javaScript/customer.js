@@ -10,6 +10,6 @@ burgerMenu.onclick = () => {
 
 //close the links by removing the active class from the hamLinks element
 closeLinks.onclick = () => {
-  //use the remove method to remove the 'active' class from the classList
+  //use the remove method to remove the 'active' class from the classList object
   hamLinks.classList.remove("active");
 };
