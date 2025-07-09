@@ -23,7 +23,7 @@ burgerMenu.onclick = () => {
 
 //adds a click eventListener to close the shopping cart element
 closeLinks.onclick = () => {
-  closeCart(); // closeCart function is invoked when the closeLinks element is clicked
+  closeCart(); // closeCart function is called when the closeLinks element is clicked
 };
 
 //by clicking the pay button the cart container closes and a confirmation message box descends from the top of the viewport
