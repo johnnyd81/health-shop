@@ -27,7 +27,7 @@ closeCartBtn.onclick = () => {
 };
 
 productContainer.onclick = function () {
-  // when the productContainer is clicked then the cartContainer will close since the "show" class is removed
+  // when the productContainer is clicked then the cartContainer will close since the "show" class is removed from the element
   cartContainer.classList.contains("show") &&
     cartContainer.classList.remove("show");
 };
